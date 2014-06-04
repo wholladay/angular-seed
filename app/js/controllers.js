@@ -1,8 +1,6 @@
 /* Controllers */
 
-angular.module('myApp.controllers', []);
-
-myApp.myControllers = angular.module('myApp.controllers');
+myApp.myControllers = angular.module('myApp.controllers', []);
 
 myApp.myControllers.controller('HomeController', ['$scope', function($scope) {
 
