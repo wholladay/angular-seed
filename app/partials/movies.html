@@ -1,0 +1,26 @@
+<h1>Your movies...</h1>
+
+<i ng-if="!movies.videos" class="fa fa-spinner fa-spin fa-4x spinner"></i>
+<table class="table table-striped" ng-show="movies.videos">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Format</th>
+        <th>Rating</th>
+        <th>Genres</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="video in movies.videos">
+        <td>{{video.title}}</td>
+        <td>{{video.format}}</td>
+        <td>{{video.rating}}</td>
+        <td>{{video.genres}}</td>
+    </tr>
+    </tbody>
+</table>
+
+<!--<p>-->
+    <!--Showing of 'interpolate' filter:-->
+    <!--{{ 'Current version is v%VERSION%.' | interpolate }}-->
+<!--</p>-->
