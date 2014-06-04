@@ -1,11 +1,10 @@
 /* Services */
 
 // Demonstrate how to register services
-// In this case it is a simple value service.
-angular.module('myApp.services', []).
-        value('version', '0.2');
+myApp.myServices = angular.module('myApp.services', []);
 
-myApp.myServices = angular.module('myApp.services');
+// In this case it is a simple value service.
+myApp.myServices.value('version', '0.2');
 
 myApp.myServices.service('VideoService', ['$http', '$q', function($http, $q) {
 
