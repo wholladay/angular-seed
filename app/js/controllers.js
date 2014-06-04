@@ -1,10 +1,19 @@
 /* Controllers */
 
-angular.module('myApp.controllers', []);
+myApp.myControllers = angular.module('myApp.controllers', []);
 
-myApp.myControllers = angular.module('myApp.controllers');
+myApp.myControllers.controller('HomeController', ['$scope', 'VideoService', function($scope, VideoService) {
 
-myApp.myControllers.controller('HomeController', ['$scope', function($scope) {
+    function _init() {
+
+        $scope.home = {
+            movieCount: '?'
+        };
+
+        $scope.home.movieCount = VideoService.movieCount;
+    }
+
+    _init();
 
 }]);
 
@@ -28,6 +37,23 @@ myApp.myControllers.controller('MoviesController', ['$scope', 'VideoService', fu
         };
 
         _getVideos();
+    }
+
+    _init();
+}]);
+
+myApp.myControllers.controller('MovieCountController', ['$scope', function($scope) {
+
+    function _init() {
+
+        $scope.movieCount = {
+            count: '?'
+        };
+
+        $scope.$on('movieCount', function(event, count) {
+
+            $scope.movieCount.count = count;
+        });
     }
 
     _init();
